@@ -1,0 +1,16 @@
+{
+  "domain": "light_reilluminator",
+  "name": "Light Reilluminator",
+  "version": "0.1.0",
+  "documentation": "https://github.com/ronaldheft/ha-light-reilluminator",
+  "issue_tracker": "https://github.com/ronaldheft/ha-light-reilluminator/issues",
+  "codeowners": ["@ronaldheft"],
+  "dependencies": [],
+  "after_dependencies": [],
+  "requirements": [],
+  "config_flow": true,
+  "single_config_entry": true,
+  "integration_type": "service",
+  "iot_class": "calculated",
+  "loggers": ["custom_components.light_reilluminator"]
+}
