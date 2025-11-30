@@ -86,14 +86,6 @@ def _patch_light_entity(restored_attrs: set[str]) -> set[str]:
     return actually_restored
 
 
-async def async_setup(hass: HomeAssistant, config: dict[str, Any]) -> bool:
-    """YAML setup (unused).
-
-    We rely on config entries only, so this just returns True.
-    """
-    return True
-
-
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     """Set up Light Reilluminator from a config entry."""
     _LOGGER.debug("Setting up %s config entry %s", DOMAIN, entry.entry_id)
