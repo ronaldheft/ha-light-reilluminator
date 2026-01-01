@@ -23,3 +23,23 @@ Home Assistant originally [removed light attributes because they can take up sig
 > - Custom integrations like adaptive lighting that frequently change color temp
 
 If these situations do not apply to you or you [configure filters to exclude lights with frequent state changes](https://www.home-assistant.io/integrations/recorder/#configure-filter) (for example, Hue lights synced to your TV), the storage requirements for light attributes are minimal.
+
+# Installation
+
+## Option 1: HACS (recommended)
+
+Coming Soon - but manually add this repo to HACS for now
+
+## Option 2
+
+1. In your Home Assistant configuration directory (`~/.homeassistant` for instance), create a directory `custom_components/light_reilluminator` and put the code in it.
+2. Restart Home Assistant
+
+# Configuration
+
+[![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=light_reilluminator)
+
+1. Add the integration via the above link
+2. Follow the directions and restart Home Assistant
+3. After restart, light attributes will start being recorded in the recorder database
+4. Remember it will take some time to accumulate a history for presence simulation
