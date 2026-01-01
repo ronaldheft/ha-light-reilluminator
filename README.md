@@ -1,6 +1,8 @@
 # HA Light Reilluminator
 
-[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/hacs/integration)
+[![GitHub Release](https://img.shields.io/github/release/ronaldheft/ha-light-reilluminator.svg?color=blue)](https://github.com/ronaldheft/ha-light-reilluminator/releases) 
+![GitHub branch check runs](https://img.shields.io/github/check-runs/ronaldheft/ha-light-reilluminator/main)
+[![hacs_badge](https://img.shields.io/badge/HACS-integration-orange.svg)](https://hacs.xyz/)
 
 This Home Assistant integration records the history of light attributes, such as brightness or color temperature, in your recorder database.
 
