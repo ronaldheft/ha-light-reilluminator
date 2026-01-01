@@ -28,9 +28,9 @@ If these situations do not apply to you or you [configure filters to exclude lig
 
 ## Option 1: HACS (recommended)
 
-Coming Soon - but manually add this repo to HACS for now
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=ronaldheft&repository=ha-light-reilluminator&category=integration)
 
-## Option 2
+## Option 2: Manual
 
 1. In your Home Assistant configuration directory (`~/.homeassistant` for instance), create a directory `custom_components/light_reilluminator` and put the code in it.
 2. Restart Home Assistant
