@@ -1,4 +1,6 @@
 {
   "name": "Light Reilluminator",
-  "content_in_root": false
+  "content_in_root": false,
+  "homeassistant": "2025.12.4",
+  "hacs": "2.0.5"
 }
