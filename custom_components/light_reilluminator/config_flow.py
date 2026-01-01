@@ -1,18 +1,19 @@
+"""Adds config flow."""
+
 from __future__ import annotations
 
-from typing import Any
+from typing import TYPE_CHECKING, Any
+
+if TYPE_CHECKING:
+    from homeassistant.data_entry_flow import FlowResult
 
 import voluptuous as vol
-
 from homeassistant import config_entries
-from homeassistant.data_entry_flow import FlowResult
 
 from .const import DOMAIN
 
 
-class LightReilluminatorConfigFlow(
-    config_entries.ConfigFlow, domain=DOMAIN
-):
+class LightReilluminatorConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     """Config flow for Light Reilluminator."""
 
     VERSION = 1

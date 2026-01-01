@@ -1,10 +1,11 @@
+"""Component stores additional light attributes in the recorder database."""
+
 from __future__ import annotations
 
 import logging
-from typing import Any
+from typing import TYPE_CHECKING
 
 from homeassistant.components.light import (
-    LightEntity,
     ATTR_BRIGHTNESS,
     ATTR_COLOR_MODE,
     ATTR_COLOR_TEMP_KELVIN,
@@ -14,10 +15,13 @@ from homeassistant.components.light import (
     ATTR_RGBW_COLOR,
     ATTR_RGBWW_COLOR,
     ATTR_XY_COLOR,
+    LightEntity,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
 from homeassistant.helpers import config_validation as cv
+
+if TYPE_CHECKING:
+    from homeassistant.config_entries import ConfigEntry
+    from homeassistant.core import HomeAssistant
 
 DOMAIN = "light_reilluminator"
 _LOGGER = logging.getLogger(__name__)
@@ -31,7 +35,7 @@ _ORIGINAL_EXCLUDED: frozenset[str] | None = None
 
 def _apply_patch() -> None:
     """Monkey patch LightEntity so brightness / color_temp are recorded again."""
-    global _PATCHED, _ORIGINAL_EXCLUDED
+    global _PATCHED, _ORIGINAL_EXCLUDED  # noqa: PLW0603
 
     if _PATCHED:
         return
@@ -80,7 +84,7 @@ def _apply_patch() -> None:
 
     new_excluded = frozenset(attr for attr in excluded if attr not in restored)
 
-    LightEntity._entity_component_unrecorded_attributes = new_excluded
+    LightEntity._entity_component_unrecorded_attributes = new_excluded  # noqa: SLF001
 
     _LOGGER.info(
         "light_reilluminator: restored attributes %s (original=%r, new=%r)",
@@ -109,7 +113,8 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
 
 
 async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
-    """Handle removal of a config entry.
+    """
+    Handle removal of a config entry.
 
     We intentionally do NOT try to revert the patch here; at this point
     there may already be live entities using the modified behavior.
